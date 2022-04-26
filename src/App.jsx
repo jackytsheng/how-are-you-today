@@ -82,7 +82,7 @@ const App = () => {
             <Text>傻瓜！</Text>
           </Typography>
           <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-            <Text>我也想你。❤️</Text>
+            <Text>我也想你 ❤️</Text>
           </Typography>
         </Box>
       </Modal>
