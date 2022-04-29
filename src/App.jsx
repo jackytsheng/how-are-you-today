@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Landing from './components/suprises/Landing';
+import Love from './components/suprises/Love';
 
 const TextWrapper = styled.div`
   position: fixed;
@@ -59,7 +61,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <TextWrapper>
+      {/* <TextWrapper>
         <Typography variant='h2'>
           <Text>想我了吗？</Text>
         </Typography>
@@ -95,7 +97,9 @@ const App = () => {
             <Text>肯定不是真心的！再给你一次机会哦 🎈</Text>
           </Typography>
         </Box>
-      </Modal>
+      </Modal> */}
+      {/* <Landing /> */}
+      <Love />
     </div>
   );
 };
