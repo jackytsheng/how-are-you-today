@@ -4,8 +4,6 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Landing from './components/suprises/Landing';
-import Love from './components/suprises/Love';
 
 const TextWrapper = styled.div`
   position: fixed;
@@ -41,7 +39,7 @@ const style = {
   p: 4,
 };
 
-const App = () => {
+const ClickBox = () => {
   const [boxPos, setBoxPos] = useState({ top: 100, left: 150 });
   const [openMiss, setOpenMissModal] = useState(false);
   const [openLie, setOpenLieModal] = useState(false);
@@ -60,7 +58,7 @@ const App = () => {
   const handleCloseLie = () => setOpenLieModal(false);
 
   return (
-    <div className='App'>
+    <div>
       <TextWrapper>
         <Typography variant='h2'>
           <Text>想我了吗？</Text>
@@ -98,10 +96,8 @@ const App = () => {
           </Typography>
         </Box>
       </Modal>
-      {/* <Landing /> */}
-      {/* <Love /> */}
     </div>
   );
 };
 
-export default App;
+export default ClickBox;
