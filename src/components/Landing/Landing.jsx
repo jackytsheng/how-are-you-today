@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import moment from 'moment';
 import './Landing.css';
 
 const Landing = () => {
@@ -41,9 +42,23 @@ const Landing = () => {
 
   function getTimeSince(startTime) {
     let t = Date.parse(new Date()) - Date.parse(startTime);
+    let a = moment(Date.now());
+    let b = moment(startTime);
+
+    let Years = a.diff(b, 'year');
+    b.add(Years, 'years');
+
+    let Months = a.diff(b, 'months');
+    b.add(Months, 'months');
+
+    let Days = a.diff(b, 'days');
+    b.add(Days, 'days');
+
     return {
       Total: t,
-      Days: Math.floor(t / (1000 * 60 * 60 * 24)),
+      Years,
+      Months,
+      Days,
       Hours: Math.floor((t / (1000 * 60 * 60)) % 24),
       Minutes: Math.floor((t / 1000 / 60) % 60),
       Seconds: Math.floor((t / 1000) % 60),

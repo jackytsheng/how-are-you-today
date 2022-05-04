@@ -1,6 +1,7 @@
 .flip-clock {
   text-align: center;
   perspective: 400px;
+  padding: 0 130px;
   margin: 20px auto;
 }
 .flip-clock *,
