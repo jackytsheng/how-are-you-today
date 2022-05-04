@@ -15,6 +15,7 @@ const TextWrapper = styled.div`
 const Text = styled.span`
   font-family: 'ZCOOL KuaiLe', cursive !important;
 `;
+
 const MoveWrapper = styled.div`
   position: fixed;
   top: ${(prop) => prop.top}px;

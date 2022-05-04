@@ -1,13 +1,15 @@
 import React from 'react';
 import Love from './components/Love';
-import './App.css';
+import Landing from './components/Landing';
 import ClickBox from './components/ClickBox';
+import './App.css';
 
 const App = () => {
   return (
     <div className='App'>
+      <Landing />
       {/* <Love /> */}
-      <ClickBox />
+      {/* <ClickBox /> */}
     </div>
   );
 };
