@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Clock } from './Clock';
 import { StartTogetherDate, DateWeKnow, DateWeMet } from './Constant';
-import Menu from './Menu';
 import './Landing.css';
 
 const Landing = () => {
@@ -26,7 +25,6 @@ const Landing = () => {
       <ClockSection title={'距离我们在一起已经'} clockName={'togetherClock'} />
       <ClockSection title={'距离我们第一次见面已经'} clockName={'metClock'} />
       <ClockSection title={'距离我们相识已经'} clockName={'knowClock'} />
-      <Menu />
     </div>
   );
 };
