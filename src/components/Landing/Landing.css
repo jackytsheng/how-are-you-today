@@ -1,8 +1,17 @@
-.flip-clock {
+.landing-clock {
   text-align: center;
+  font-family: 'ZCOOL KuaiLe', cursive !important;
+  color: #383838;
+}
+.landing-clock h2 {
+  font-weight: 400;
+}
+.flip-clock {
+  display: flex;
+  justify-content: center;
   perspective: 400px;
-  padding: 0 130px;
   margin: 20px auto;
+  font-family: 'Fredericka the Great', cursive;
 }
 .flip-clock *,
 .flip-clock *:before,
@@ -14,13 +23,13 @@
   margin: 0 5px;
 }
 .flip-clock__slot {
-  font-size: 2vw;
+  font-size: 10px;
 }
 .card {
   display: block;
   position: relative;
   padding-bottom: 0.72em;
-  font-size: 9vw;
+  font-size: 35px;
   line-height: 0.95;
 }
 .card__top,

@@ -1,120 +1,43 @@
 import React, { useEffect } from 'react';
-import moment from 'moment';
+import { Clock } from './Clock';
+import { StartTogetherDate, DateWeKnow, DateWeMet } from './Constant';
+import Menu from './Menu';
 import './Landing.css';
 
 const Landing = () => {
-  function CountdownTracker(label, value) {
-    let el = document.createElement('span');
+  const setUpClock = (date, className) => {
+    let c = new Clock(date);
 
-    el.className = 'flip-clock__piece';
-    el.innerHTML =
-      '<b class="flip-clock__card card"><b class="card__top"></b><b class="card__bottom"></b><b class="card__back"><b class="card__bottom"></b></b></b>' +
-      '<span class="flip-clock__slot">' +
-      label +
-      '</span>';
-
-    this.el = el;
-
-    let top = el.querySelector('.card__top'),
-      bottom = el.querySelector('.card__bottom'),
-      back = el.querySelector('.card__back'),
-      backBottom = el.querySelector('.card__back .card__bottom');
-
-    this.update = function (val) {
-      val = ('0' + val).slice(-2);
-      if (val !== this.currentValue) {
-        if (this.currentValue >= 0) {
-          back.setAttribute('data-value', this.currentValue);
-          bottom.setAttribute('data-value', this.currentValue);
-        }
-        this.currentValue = val;
-        top.innerText = this.currentValue;
-        backBottom.setAttribute('data-value', this.currentValue);
-
-        this.el.classList.remove('flip');
-        void this.el.offsetWidth;
-        this.el.classList.add('flip');
-      }
-    };
-
-    this.update(value);
-  }
-
-  function getTimeSince(startTime) {
-    let t = Date.parse(new Date()) - Date.parse(startTime);
-    let a = moment(Date.now());
-    let b = moment(startTime);
-
-    let Years = a.diff(b, 'year');
-    b.add(Years, 'years');
-
-    let Months = a.diff(b, 'months');
-    b.add(Months, 'months');
-
-    let Days = a.diff(b, 'days');
-    b.add(Days, 'days');
-
-    return {
-      Total: t,
-      Years,
-      Months,
-      Days,
-      Hours: Math.floor((t / (1000 * 60 * 60)) % 24),
-      Minutes: Math.floor((t / 1000 / 60) % 60),
-      Seconds: Math.floor((t / 1000) % 60),
-    };
-  }
-
-  function Clock(countdown) {
-    this.el = document.createElement('div');
-    this.el.className = 'flip-clock';
-
-    let trackers = {},
-      t = getTimeSince(countdown),
-      key,
-      timeinterval;
-
-    for (key in t) {
-      if (key === 'Total') {
-        continue;
-      }
-      trackers[key] = new CountdownTracker(key, t[key]);
-      this.el.appendChild(trackers[key].el);
+    let clockNode = document.querySelector(`.${className}`);
+    while (clockNode.childElementCount !== 0) {
+      clockNode.removeChild(clockNode.firstChild);
     }
+    clockNode.appendChild(c.el);
+  };
 
-    let i = 0;
-    function updateClock() {
-      timeinterval = requestAnimationFrame(updateClock);
-
-      // throttle so it's not constantly updating the time.
-      if (i++ % 10) {
-        return;
-      }
-
-      let t = getTimeSince(countdown);
-
-      for (key in trackers) {
-        trackers[key].update(t[key]);
-      }
-    }
-
-    setTimeout(updateClock, 500);
-  }
-
-  const StartTogetherDate = new Date(
-    'Monday, April 25, 2022 8:05:00 PM GMT+10:00'
-  );
-  console.log('i am outside useEffect');
   useEffect(() => {
-    console.log('i am inside useEffect');
-    let c = new Clock(StartTogetherDate);
-
-    let clockNode = document.querySelector('.clock');
-    if (clockNode.firstChild) clockNode.removeChild(clockNode.firstChild);
-    document.querySelector('.clock').appendChild(c.el);
+    setUpClock(StartTogetherDate, 'togetherClock');
+    setUpClock(DateWeMet, 'metClock');
+    setUpClock(DateWeKnow, 'knowClock');
   }, []);
 
-  return <div className='clock'></div>;
+  return (
+    <div className='landing-clock'>
+      <ClockSection title={'距离我们在一起已经'} clockName={'togetherClock'} />
+      <ClockSection title={'距离我们第一次见面已经'} clockName={'metClock'} />
+      <ClockSection title={'距离我们相识已经'} clockName={'knowClock'} />
+      <Menu />
+    </div>
+  );
+};
+
+const ClockSection = ({ title, clockName }) => {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <div className={clockName}></div>
+    </div>
+  );
 };
 
 export default Landing;

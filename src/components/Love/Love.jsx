@@ -13,6 +13,15 @@ const Text = styled.span`
   margin-top: 10px;
   top: 250px;
   left: 125px;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  font-size: 24px;
+  color: #999;
 `;
 
 const Love = () => {
