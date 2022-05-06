@@ -1,6 +1,11 @@
+.landing-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'ZCOOL KuaiLe', cursive !important;
+}
+
 .landing-clock {
   text-align: center;
-  font-family: 'ZCOOL KuaiLe', cursive !important;
   color: #383838;
 }
 .landing-clock h2 {

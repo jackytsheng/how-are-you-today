@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Clock } from './Clock';
+import Menu from './Menu';
 import { StartTogetherDate, DateWeKnow, DateWeMet } from './Constant';
 import './Landing.css';
 
@@ -21,14 +22,19 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className='landing-clock'>
-      <ClockSection title={'距离我们在一起已经'} clockName={'togetherClock'} />
-      <ClockSection title={'距离我们第一次见面已经'} clockName={'metClock'} />
-      <ClockSection title={'距离我们相识已经'} clockName={'knowClock'} />
+    <div className='landing-wrapper'>
+      <div className='landing-clock'>
+        <ClockSection
+          title={'距离我们在一起已经'}
+          clockName={'togetherClock'}
+        />
+        <ClockSection title={'距离我们第一次见面已经'} clockName={'metClock'} />
+        <ClockSection title={'距离我们相识已经'} clockName={'knowClock'} />
+      </div>
+      <Menu />
     </div>
   );
 };
-
 const ClockSection = ({ title, clockName }) => {
   return (
     <div>
