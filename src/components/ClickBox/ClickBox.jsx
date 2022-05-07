@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import BackBtn from '../BackBtn/BackBtn';
 
 const TextWrapper = styled.div`
   position: fixed;
@@ -49,7 +50,6 @@ const ClickBox = () => {
 
   const randomPos = () => {
     const { innerWidth: width, innerHeight: height } = window;
-    console.log(width, height);
     setBoxPos({ top: getRandom(height - 100), left: getRandom(width - 100) });
   };
 
@@ -97,6 +97,7 @@ const ClickBox = () => {
           </Typography>
         </Box>
       </Modal>
+      <BackBtn />
     </div>
   );
 };

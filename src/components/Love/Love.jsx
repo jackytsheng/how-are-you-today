@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import BackBtn from '../BackBtn/BackBtn';
 import './Love.css';
 
 const Wrapper = styled.div`
@@ -37,7 +38,6 @@ const Love = () => {
           </label>
         </>
       )}
-
       {show.length >= 2 && (
         <>
           <input type='checkbox' id='ck2' />
@@ -58,6 +58,7 @@ const Love = () => {
         </>
       )}
       {show.length >= 4 && <Text> 我很想你哦！🎈</Text>}
+      <BackBtn />
     </Wrapper>
   );
 };
