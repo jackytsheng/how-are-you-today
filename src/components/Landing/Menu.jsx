@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-
+import { BASE_URL } from './Constant';
 const Btn = styled.button`
   font-family: 'ZCOOL KuaiLe', cursive !important;
   padding: 20px 40px;
@@ -61,15 +61,16 @@ const BtnGroup = styled.div`
 `;
 
 const Menu = () => {
+  const baseUrl = BASE_URL;
   return (
     <BtnGroup>
       <h2>往日惊喜：</h2>
       <BtnSet
         date='26 April 2022'
         btnText='你想我吗?（用电脑）'
-        to='/doyoumissme'
+        to={`${baseUrl}doyoumissme`}
       />
-      <BtnSet date='29 April 2022' btnText='辛苦啦！' to='/heart' />
+      <BtnSet date='29 April 2022' btnText='辛苦啦！' to={`${baseUrl}heart`} />
     </BtnGroup>
   );
 };

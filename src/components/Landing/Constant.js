@@ -7,3 +7,4 @@ export const DateWeKnow = new Date(
 export const DateWeMet = new Date(
   'Sunday, March 20, 2022 1:30:10 PM GMT+11:00'
 );
+export const BASE_URL = '/how-are-you-today/';

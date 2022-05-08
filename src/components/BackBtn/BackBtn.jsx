@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-
+import { BASE_URL } from '../Landing/Constant';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -91,9 +91,10 @@ const Veritical = styled(Common)`
 
 const BackBtn = () => {
   const navigate = useNavigate();
+  const baseUrl = BASE_URL;
   return (
     <Wrapper>
-      <Btn onClick={() => navigate('/')}>
+      <Btn onClick={() => navigate(baseUrl)}>
         Back to Home
         <Horizontal />
         <Veritical />
