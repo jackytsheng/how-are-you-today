@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import BackBtn from '../BackBtn/BackBtn';
-import { BrowserView, isMobile } from 'react-device-detect';
+import { BrowserView, isMobile, isBrowser } from 'react-device-detect';
 
 const TextWrapper = styled.div`
   position: fixed;
@@ -66,7 +66,11 @@ const ClickBox = () => {
           <Text>想我了吗？</Text>
         </Typography>
       </TextWrapper>
-      <MoveWrapper onMouseEnter={randomPos} top={boxPos.top} left={boxPos.left}>
+      <MoveWrapper
+        onMouseEnter={isBrowser && randomPos}
+        top={boxPos.top}
+        left={boxPos.left}
+      >
         <Button
           variant='outlined'
           onClick={isMobile ? randomPos : openLieModal}
