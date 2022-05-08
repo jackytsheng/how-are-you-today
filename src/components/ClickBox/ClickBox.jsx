@@ -67,7 +67,10 @@ const ClickBox = () => {
         </Typography>
       </TextWrapper>
       <MoveWrapper onMouseEnter={randomPos} top={boxPos.top} left={boxPos.left}>
-        <Button variant='outlined' onClick={openLieModal}>
+        <Button
+          variant='outlined'
+          onClick={isMobile ? randomPos : openLieModal}
+        >
           <Text>不想</Text>
         </Button>
       </MoveWrapper>
