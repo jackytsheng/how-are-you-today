@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from './Constant';
+
 const Btn = styled.button`
   font-family: 'ZCOOL KuaiLe', cursive !important;
   padding: 20px 40px;
@@ -10,6 +11,7 @@ const Btn = styled.button`
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 3px;
+  color: #383838;
   cursor: pointer;
   &:after,
   &:before {
@@ -67,7 +69,7 @@ const Menu = () => {
       <h2>往日惊喜：</h2>
       <BtnSet
         date='26 April 2022'
-        btnText='你想我吗?（用电脑）'
+        btnText='你想我吗?'
         to={`${baseUrl}doyoumissme`}
       />
       <BtnSet date='29 April 2022' btnText='辛苦啦！' to={`${baseUrl}heart`} />

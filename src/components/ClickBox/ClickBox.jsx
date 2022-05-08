@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import BackBtn from '../BackBtn/BackBtn';
+import { BrowserView, isMobile } from 'react-device-detect';
 
 const TextWrapper = styled.div`
   position: fixed;
@@ -34,7 +35,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: isMobile ? 200 : 400,
   bgcolor: 'background.paper',
   border: '2px solid #fff',
   boxShadow: 24,
@@ -87,16 +88,18 @@ const ClickBox = () => {
           </Typography>
         </Box>
       </Modal>
-      <Modal open={openLie} onClose={handleCloseLie}>
-        <Box sx={style}>
-          <Typography id='modal-modal-title' variant='h6' component='h2'>
-            <Text>你说谎！</Text>
-          </Typography>
-          <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-            <Text>肯定不是真心的！再给你一次机会哦 🎈</Text>
-          </Typography>
-        </Box>
-      </Modal>
+      <BrowserView>
+        <Modal open={openLie} onClose={handleCloseLie}>
+          <Box sx={style}>
+            <Typography id='modal-modal-title' variant='h6' component='h2'>
+              <Text>你说谎！</Text>
+            </Typography>
+            <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+              <Text>肯定不是真心的！再给你一次机会哦 🎈</Text>
+            </Typography>
+          </Box>
+        </Modal>
+      </BrowserView>
       <BackBtn />
     </div>
   );

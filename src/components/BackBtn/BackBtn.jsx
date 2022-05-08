@@ -25,7 +25,7 @@ const Btn = styled.div`
   appearance: none;
   border: 0;
   background: transparent;
-  color: #e55743;
+  color: #383838;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   outline: none;
@@ -55,7 +55,7 @@ const Common = styled.div`
   left: var(--vertical-offset, 0);
   transition: transform 0.8s ease;
   will-change: transform;
-
+  color: #383838;
   &::before {
     content: '';
     position: absolute;
@@ -67,7 +67,6 @@ const Horizontal = styled(Common)`
   --vertical-offset: calc(var(--offset) * -1);
   border-top: var(--border-size) solid currentcolor;
   border-bottom: var(--border-size) solid currentcolor;
-
   &::before {
     top: calc(var(--vertical-offset) - var(--border-size));
     bottom: calc(var(--vertical-offset) - var(--border-size));
@@ -76,7 +75,7 @@ const Horizontal = styled(Common)`
   }
 `;
 
-const Veritical = styled(Common)`
+const Vertical = styled(Common)`
   --horizontal-offset: calc(var(--offset) * -1);
   border-left: var(--border-size) solid currentcolor;
   border-right: var(--border-size) solid currentcolor;
@@ -97,7 +96,7 @@ const BackBtn = () => {
       <Btn onClick={() => navigate(baseUrl)}>
         Back to Home
         <Horizontal />
-        <Veritical />
+        <Vertical />
       </Btn>
     </Wrapper>
   );
