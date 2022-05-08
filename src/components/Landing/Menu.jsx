@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from './Constant';
@@ -84,8 +84,6 @@ const Menu = () => {
 
 const BtnSet = ({ date = '', btnText, to = '', url = '' }) => {
   const navigate = useNavigate();
-  const [redirect, setRedirect] = useState(false);
-  console.log(redirect);
   return (
     <>
       {date && <Text>{date}</Text>}
