@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from './Constant';
@@ -66,6 +67,10 @@ const Menu = () => {
   const baseUrl = BASE_URL;
   return (
     <BtnGroup>
+      <BtnSet
+        btnText='我们看过的电影'
+        url='https://jackytsheng.notion.site/2923c8f90e194d8da37c55fb793eb60e?v=007396d3062d4f048d687c5fdb58a003'
+      />
       <h2>往日惊喜：</h2>
       <BtnSet
         date='26 April 2022'
@@ -77,12 +82,24 @@ const Menu = () => {
   );
 };
 
-const BtnSet = ({ date, btnText, to }) => {
+const BtnSet = ({ date = '', btnText, to = '', url = '' }) => {
   const navigate = useNavigate();
+  const [redirect, setRedirect] = useState(false);
+  console.log(redirect);
   return (
     <>
-      <Text>{date}</Text>
-      <Btn onClick={() => navigate(to)}>{btnText}</Btn>
+      {date && <Text>{date}</Text>}
+      <Btn
+        onClick={() => {
+          if (url) {
+            window.location.href = url;
+          } else {
+            navigate(to);
+          }
+        }}
+      >
+        {btnText}
+      </Btn>
     </>
   );
 };
