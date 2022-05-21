@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Clock } from './Clock';
 import Menu from './Menu';
 import { StartTogetherDate, DateWeKnow, DateWeMet } from './Constant';
 import './Landing.css';
+import Loading from '../Loading';
 
 const Landing = () => {
   const setUpClock = (date, className) => {
@@ -23,6 +24,7 @@ const Landing = () => {
 
   return (
     <div className='landing-wrapper'>
+      <Loading />
       <div className='landing-clock'>
         <ClockSection
           title={'距离我们在一起已经'}
