@@ -40,7 +40,7 @@ const GoldMine = () => {
           <Orientation orientation='landscape' alwaysRender={false}>
             <iframe
               title='gold mine'
-              src='https://html5.gamedistribution.com/c50d8a3e26c54b66b67f5059eae2d13d/?gd_sdk_referrer_url=https://jackytsheng.github.io/how-are-you-today/gold-mine'
+              src='//html5.gamedistribution.com/rvvASMiM/c50d8a3e26c54b66b67f5059eae2d13d/?gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&gd_sdk_referrer_url=https%3A%2F%2Fgamedistribution.com%2Fgames%2Fgold-miner&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2dhbWVkaXN0cmlidXRpb24uY29tL2dhbWVzL2dvbGQtbWluZXIiLCJwYXJlbnREb21haW4iOiJnYW1lZGlzdHJpYnV0aW9uLmNvbSIsInRvcERvbWFpbiI6ImdhbWVkaXN0cmlidXRpb24uY29tIiwiaGFzSW1wcmVzc2lvbiI6ZmFsc2UsImxvYWRlckVuYWJsZWQiOnRydWUsImhvc3QiOiJodG1sNS5nYW1lZGlzdHJpYnV0aW9uLmNvbSIsInZlcnNpb24iOiIxLjUuMTQifQ%253D%253D'
               scrolling='none'
               height='100%'
               width='100%'
