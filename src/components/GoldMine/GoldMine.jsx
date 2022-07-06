@@ -40,7 +40,7 @@ const GoldMine = () => {
           <Orientation orientation='landscape' alwaysRender={false}>
             <iframe
               title='gold mine'
-              src='https://html5.gamedistribution.com/c50d8a3e26c54b66b67f5059eae2d13d/'
+              src='https://html5.gamedistribution.com/c50d8a3e26c54b66b67f5059eae2d13d/?gd_sdk_referrer_url=https://jackytsheng.github.io/how-are-you-today/gold-mine'
               scrolling='none'
               height='100%'
               width='100%'
