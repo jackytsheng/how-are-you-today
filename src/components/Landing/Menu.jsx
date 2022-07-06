@@ -78,6 +78,11 @@ const Menu = () => {
         to={`${baseUrl}doyoumissme`}
       />
       <BtnSet date='29 April 2022' btnText='辛苦啦！' to={`${baseUrl}heart`} />
+      <BtnSet
+        date='06 July 2022'
+        btnText='宝宝的的童年！'
+        to={`${baseUrl}gold-mine`}
+      />
     </BtnGroup>
   );
 };

@@ -16,6 +16,7 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.0.0",
     "react-router-dom": "6",
+    "react-screen-orientation": "^0.0.4",
     "react-scripts": "5.0.1",
     "sass": "^1.51.0",
     "styled-components": "^5.3.5",

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../Landing/Constant';
+import Button from '@mui/material/Button';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -88,17 +89,38 @@ const Vertical = styled(Common)`
   }
 `;
 
-const BackBtn = () => {
+const SimpleWrapper = styled.div`
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+`;
+
+const BackBtn = ({ simple }) => {
   const navigate = useNavigate();
   const baseUrl = BASE_URL;
   return (
-    <Wrapper>
-      <Btn onClick={() => navigate(baseUrl)}>
-        Back to Home
-        <Horizontal />
-        <Vertical />
-      </Btn>
-    </Wrapper>
+    <>
+      {simple ? (
+        <SimpleWrapper>
+          <Button
+            onClick={() => navigate(baseUrl)}
+            variant='contained'
+            size='small'
+            color='secondary'
+          >
+            Back
+          </Button>
+        </SimpleWrapper>
+      ) : (
+        <Wrapper>
+          <Btn onClick={() => navigate(baseUrl)}>
+            Back to Home
+            <Horizontal />
+            <Vertical />
+          </Btn>
+        </Wrapper>
+      )}
+    </>
   );
 };
 
