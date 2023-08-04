@@ -73,7 +73,7 @@ const Menu = () => {
       />
       <BtnSet
         btnText='我们看过的剧集'
-        url='https://jackytsheng.notion.site/bba42a66904043768be70b080ec74f75?v=876697b82e2f4b39a49b9027992a8a06·'
+        url='https://jackytsheng.notion.site/bba42a66904043768be70b080ec74f75?v=876697b82e2f4b39a49b9027992a8a06'
       />
       <h2>往日惊喜：</h2>
       <BtnSet
