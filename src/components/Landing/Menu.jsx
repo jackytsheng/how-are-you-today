@@ -71,6 +71,10 @@ const Menu = () => {
         btnText='我们看过的电影'
         url='https://jackytsheng.notion.site/2923c8f90e194d8da37c55fb793eb60e?v=007396d3062d4f048d687c5fdb58a003'
       />
+      <BtnSet
+        btnText='我们看过的剧集'
+        url='https://jackytsheng.notion.site/bba42a66904043768be70b080ec74f75?v=876697b82e2f4b39a49b9027992a8a06·'
+      />
       <h2>往日惊喜：</h2>
       <BtnSet
         date='26 April 2022'
